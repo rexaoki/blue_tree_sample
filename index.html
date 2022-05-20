@@ -95,6 +95,9 @@
     })
     
     var el = document.getElementById("lesson");
-    console.log(el);
+    el.addEventListerner("click", () => {
+      console.log("/////////tap/////////////");
+      repro.track("webLessonTapped");
+    })
 </script>
 </html>
