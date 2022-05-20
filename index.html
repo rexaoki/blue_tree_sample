@@ -92,6 +92,7 @@
     window.addEventListener("DOMContentLoaded", (event) => {
       console.log("/////////finish/////////////");
       repro.track("webViewTracked");
+      window.setTimeout( 'repro.track("webViewDelayTracked")', 100 );
     })  
 </script>
 </html>
