@@ -89,11 +89,17 @@
   </footer>
 </body>
 <script>
+    function func() {
+      repro.track("webViewDelayTracked")
+    }
+
+    function delayExec() {
+      setTimeout('func();', 1000);
+    }
     window.addEventListener("DOMContentLoaded", (event) => {
       console.log("/////////finish/////////////");
-//       repro.track("webViewTracked");
-      setTimeout(repro.track("webViewDelayTracked"), 1000);
-            setTimeout(console.log("/////////finishdelay/////////////"), 1000);
+      repro.track("webViewTracked");
+      delayExec();
     })  
 </script>
 </html>
